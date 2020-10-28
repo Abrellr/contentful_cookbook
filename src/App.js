@@ -19,13 +19,15 @@ function App() {
         <div>
           <Header />
           <Banner />
-            <About/>
-            <Switch>
 
-            <Route component ={Card} path='/:recipeName?' />    
+          <Route exact path="/" component={About} />
+          <Route component ={Card} path='/:recipeName?' />    
 
-          </Switch>  
+          <Route exact path="/About" component={AboutUs} />
+
+
           <Footer />
+
         </div>
         </Router>
         );  
