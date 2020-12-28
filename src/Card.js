@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { client } from "./client";
 import marked from 'marked';
-import './Card.css';
+import './App.css';
 import MainPageButton from "./MainPageButton";
 
 
@@ -30,13 +30,13 @@ const Card = ({match, history}) => {
         .map((recipe,index)=>{
           return(
             <div key={index} className={recipeName?"cardBig": "card"}>
-              <Link to={`/${recipe.fields.slug}`}>
+              <Link id="linkItem" to={`/${recipe.fields.slug}`}>
               <h3 className={recipeName?"cardTitleBig": "cardTitle"}> {recipe.fields.title} </h3>
               </Link>          
               <img className={recipeName?"cardImageBig":"cardImage"} src={recipeName ? recipe.fields.bigImage.fields.file.url: recipe.fields.image.fields.file.url} alt={recipe.fields.description}/>
               <p className={recipeName?"cardDescBig": "cardDesc"}>{recipe.fields.description}</p> 
               {recipeName? <section className="ingredient"dangerouslySetInnerHTML={{__html:marked(recipe.fields.ingredient)}} /> :""}            
-              {recipeName? <MainPageButton history={history} /> : ""}
+              {recipeName? <MainPageButton id="buttonBig" history={history} /> : ""}
             </div>
           )
         })

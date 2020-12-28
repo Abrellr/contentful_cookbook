@@ -1,7 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router , Switch, Route } from "react-router-dom"
+import { Switch, Route } from "react-router-dom"
 import './App.css';
-import { client } from "./client";
 
 import Header from "./Header";
 import Banner from "./Banner";
@@ -11,25 +10,21 @@ import Footer from "./Footer"
 import AboutUs from "./AboutUs";
 //import dotenv from 'dotenv'
 
-require('dotenv').config()
 
 function App() {
   return (
-    <Router>
         <div>
           <Header />
           <Banner />
-
-          <Route exact path="/" component={About} />
+          <Switch>
           <Route component ={Card} path='/:recipeName?' />    
-
-          <Route exact path="/About" component={AboutUs} />
-
+          <Route path="/About" component={AboutUs} />
+          <Route exact path="/Home" component={About} />
+          </Switch>
 
           <Footer />
 
         </div>
-        </Router>
         );  
 }
 export default App;
