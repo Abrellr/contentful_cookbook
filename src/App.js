@@ -8,6 +8,7 @@ import Banner from "./Banner";
 import About from "./About";
 import Card from "./Card";
 import Footer from "./Footer"
+import AboutUs from "./AboutUs";
 //import dotenv from 'dotenv'
 
 require('dotenv').config()
@@ -19,8 +20,10 @@ function App() {
           <Header />
           <Banner />
             <About/>
-          <Switch>           
-            <Route component ={Card} path='/:recipeName?' />
+            <Switch>
+
+            <Route component ={Card} path='/:recipeName?' />    
+
           </Switch>  
           <Footer />
         </div>

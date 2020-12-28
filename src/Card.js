@@ -36,11 +36,12 @@ const Card = ({match, history}) => {
               <img className={recipeName?"cardImageBig":"cardImage"} src={recipeName ? recipe.fields.bigImage.fields.file.url: recipe.fields.image.fields.file.url} alt={recipe.fields.description}/>
               <p className={recipeName?"cardDescBig": "cardDesc"}>{recipe.fields.description}</p> 
               {recipeName? <section className="ingredient"dangerouslySetInnerHTML={{__html:marked(recipe.fields.ingredient)}} /> :""}            
+              {recipeName? <MainPageButton history={history} /> : ""}
             </div>
           )
         })
       }
-      <MainPageButton history={history} />
+      
     </div>
   )
 } 
