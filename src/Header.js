@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import client from "./client"
 import "./App.css"
-import { BrowserRouter as Router, NavLink } from "react-router-dom"
 
 function Header(){
 
@@ -19,21 +18,13 @@ function Header(){
     console.log(header);
 
     return (
-        <Router>
         <div className="header">
-            
             <h2 className="logoText">Remy's Kitchen</h2>
             <nav className="navigation">
-                {header && header.fields.navigationItems.map((navItem, index) => {
-                    return (
-                        <NavLink className="navigationItem" key={index} to={`/${navItem}`} activeStyle={{ color: "white"}}>{navItem}</NavLink> 
-                    )    
-                })}
-              
-            </nav>
-            
+                <li>Home</li>
+                <li>About</li>
+            </nav>     
             </div>
-        </Router>
         );
     }
 

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import client from "./client";
 import "./App.css";
-import SearchBar from "./SearchBar"
 
 function Footer() {
 
@@ -36,10 +35,6 @@ function Footer() {
             <div className="copyright">
             <p>Copyright © 2020 - Remy's Kitchen</p>
             </div>
-            <div className="search-container">
-                <SearchBar/>
-            </div>
-            
         </div>
 
     )
